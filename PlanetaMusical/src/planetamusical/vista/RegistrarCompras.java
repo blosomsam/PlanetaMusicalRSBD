@@ -29,47 +29,55 @@ public class RegistrarCompras extends javax.swing.JInternalFrame {
 
         jLabel10 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtTotalProductos = new javax.swing.JTextField();
-        txtValorTotalProductos = new javax.swing.JTextField();
-        FechaCompra = new org.jdesktop.swingx.JXDatePicker();
+        JTextTotalProductosComprados = new javax.swing.JTextField();
+        JTextValosTotalProductosComprados = new javax.swing.JTextField();
+        JXDateCompraProducto = new org.jdesktop.swingx.JXDatePicker();
         jLabel2 = new javax.swing.JLabel();
-        FechaIngresoCompra = new org.jdesktop.swingx.JXDatePicker();
+        JXDateIngresoCompraProducto = new org.jdesktop.swingx.JXDatePicker();
         jLabel3 = new javax.swing.JLabel();
+        BtnGuardarCuenta = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jLabel5 = new javax.swing.JLabel();
-        btnCrear = new javax.swing.JButton();
-        btnDarDeBaja = new javax.swing.JButton();
-
-        setClosable(true);
-        setIconifiable(true);
 
         jLabel10.setText("Valor Total :");
 
         jLabel4.setText("Total de productos :");
 
-        txtTotalProductos.addActionListener(new java.awt.event.ActionListener() {
+        JTextTotalProductosComprados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTotalProductosActionPerformed(evt);
+                JTextTotalProductosCompradosActionPerformed(evt);
             }
         });
 
-        FechaCompra.addActionListener(new java.awt.event.ActionListener() {
+        JXDateCompraProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FechaCompraActionPerformed(evt);
+                JXDateCompraProductoActionPerformed(evt);
             }
         });
 
         jLabel2.setText("Fecha de compra :");
 
-        FechaIngresoCompra.addActionListener(new java.awt.event.ActionListener() {
+        JXDateIngresoCompraProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FechaIngresoCompraActionPerformed(evt);
+                JXDateIngresoCompraProductoActionPerformed(evt);
             }
         });
 
         jLabel3.setText("Fecha  de ingreso de compra :");
+
+        BtnGuardarCuenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaPlanetaMusical/imagenes/Save-20x20.png"))); // NOI18N
+        BtnGuardarCuenta.setText("Guardar");
+        BtnGuardarCuenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarCuentaActionPerformed(evt);
+            }
+        });
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/SistemaPlanetaMusical/imagenes/close-20x20.png"))); // NOI18N
+        jButton4.setText("Salir");
 
         jLabel6.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 102, 255));
@@ -79,17 +87,6 @@ public class RegistrarCompras extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Descripción de la compra :");
 
-        btnCrear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/guardar-25x25.png"))); // NOI18N
-        btnCrear.setText("Guardar");
-
-        btnDarDeBaja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salir-25x25.png"))); // NOI18N
-        btnDarDeBaja.setText("Salir ");
-        btnDarDeBaja.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDarDeBajaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,32 +95,33 @@ public class RegistrarCompras extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2))
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(FechaCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                                    .addComponent(FechaIngresoCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(jScrollPane1)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(BtnGuardarCuenta)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel5)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(52, 52, 52)
-                                    .addComponent(jLabel10)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtValorTotalProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(jLabel4)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtTotalProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnCrear)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnDarDeBaja, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel2))
+                                    .addGap(39, 39, 39)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(JXDateCompraProducto, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                                        .addComponent(JXDateIngresoCompraProducto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jScrollPane1)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(52, 52, 52)
+                                        .addComponent(jLabel10)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(JTextValosTotalProductosComprados, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jLabel4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(JTextTotalProductosComprados, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(93, 93, 93)
                         .addComponent(jLabel6)))
@@ -136,58 +134,62 @@ public class RegistrarCompras extends javax.swing.JInternalFrame {
                 .addComponent(jLabel6)
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FechaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JXDateCompraProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FechaIngresoCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JXDateIngresoCompraProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtTotalProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JTextTotalProductosComprados, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel4)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtValorTotalProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextValosTotalProductosComprados, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCrear, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnDarDeBaja, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(15, Short.MAX_VALUE))
+                    .addComponent(BtnGuardarCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtTotalProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalProductosActionPerformed
-        
-    }//GEN-LAST:event_txtTotalProductosActionPerformed
+    private void JTextTotalProductosCompradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextTotalProductosCompradosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTextTotalProductosCompradosActionPerformed
 
-    private void FechaIngresoCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaIngresoCompraActionPerformed
-        
-    }//GEN-LAST:event_FechaIngresoCompraActionPerformed
+    private void BtnGuardarCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarCuentaActionPerformed
+        // TODO add your handling code here:
 
-    private void FechaCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FechaCompraActionPerformed
         
-    }//GEN-LAST:event_FechaCompraActionPerformed
+    }//GEN-LAST:event_BtnGuardarCuentaActionPerformed
 
-    private void btnDarDeBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDarDeBajaActionPerformed
-        
-         this.setVisible(false);
-    }//GEN-LAST:event_btnDarDeBajaActionPerformed
+    private void JXDateIngresoCompraProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JXDateIngresoCompraProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JXDateIngresoCompraProductoActionPerformed
+
+    private void JXDateCompraProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JXDateCompraProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JXDateCompraProductoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private org.jdesktop.swingx.JXDatePicker FechaCompra;
-    private org.jdesktop.swingx.JXDatePicker FechaIngresoCompra;
-    private javax.swing.JButton btnCrear;
-    private javax.swing.JButton btnDarDeBaja;
+    private javax.swing.JButton BtnGuardarCuenta;
+    private javax.swing.JTextField JTextTotalProductosComprados;
+    private javax.swing.JTextField JTextValosTotalProductosComprados;
+    private org.jdesktop.swingx.JXDatePicker JXDateCompraProducto;
+    private org.jdesktop.swingx.JXDatePicker JXDateIngresoCompraProducto;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -196,7 +198,5 @@ public class RegistrarCompras extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextField txtTotalProductos;
-    private javax.swing.JTextField txtValorTotalProductos;
     // End of variables declaration//GEN-END:variables
 }
